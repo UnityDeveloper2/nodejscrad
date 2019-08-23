@@ -24,3 +24,10 @@ io.on('connection',function(socket){// A Listen To Recieve Data
         socket.broadcast.emit("MOVING",CurrentUser);
     });
 });
+app.set('port',process.env.PORT || 80);
+server.listen(app.get('port'),function () {
+    console.log("Server Is On !");
+    setTimeout( function () {
+        console.log("Sever Is online")
+    }, 1000 );
+});
